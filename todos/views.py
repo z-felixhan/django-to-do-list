@@ -32,3 +32,9 @@ def complete(request, todo_id):
     todo.save()
 
     return redirect('index')
+
+def delete(request, todo_id):
+    todo = Todo.objects.get(pk=todo_id)
+    todo.delete()
+    
+    return redirect('index')

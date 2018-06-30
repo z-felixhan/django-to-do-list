@@ -12,7 +12,7 @@
 <ul>
     {% for todo in todoList %}
     {% if todo.complete %}
-    <li class="complete">{{ todo.text }}</li>
+    <a href="{% url 'delete' todo.id %}"><li class="complete">{{ todo.text }}</li></a>
     {% else %}
     <a href="{% url 'complete' todo.id %}"><li>{{ todo.text }}</li></a>
     {% endif %}
