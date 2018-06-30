@@ -7,9 +7,13 @@
 <input type="text">
 
 <ul>
-    <li>To Do One</li>
-    <li class="complete">To Do Two</li>
-    <li>To Do Three</li>
+    {% for todo in todoList %}
+    {% if todo.complete %}
+    <li class="complete">{{ todo.text }}</li>
+    {% else %}
+    <li>{{ todo.text }}</li>
+    {% endif %}
+    {% endfor %}
 </ul>
 
 {% endblock %}
