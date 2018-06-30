@@ -9,12 +9,12 @@
     {{ form.text }}
 </form>
 
-<ul>
+<ul class="center-align collection">
     {% for todo in todoList %}
     {% if todo.complete %}
-    <a href="{% url 'delete' todo.id %}"><li class="complete">{{ todo.text }}</li></a>
+    <a href="{% url 'delete' todo.id %}" class="collection-item complete deleteHover">{{ todo.text }}</a>
     {% else %}
-    <a href="{% url 'complete' todo.id %}"><li>{{ todo.text }}</li></a>
+    <a href="{% url 'complete' todo.id %}" class="collection-item completeHover">{{ todo.text }}</a>
     {% endif %}
     {% endfor %}
 </ul>
